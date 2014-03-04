@@ -1,0 +1,19 @@
+{
+  "name": "mp4map",
+  "version": "0.1.2",
+  "description": "mp4 atoms map",
+  "main": "mp4map.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mp4",
+    "parser"
+  ],
+  "preferGlobal": "true",
+  "bin": {
+    "mp4map": "./bin/mp4map"
+  },
+  "author": "ysle",
+  "license": "MIT"
+}
