@@ -1,6 +1,6 @@
 {
   "name": "mp4map",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "mp4 atoms map",
   "main": "mp4map.js",
   "scripts": {
@@ -10,6 +10,10 @@
     "mp4",
     "parser"
   ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/ysle/mp4map.git"
+  },
   "preferGlobal": "true",
   "bin": {
     "mp4map": "./bin/mp4map"
