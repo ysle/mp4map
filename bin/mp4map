@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+
+var parentBoxes = ['moov', 'trak', 'mdia', 'minf', 'dinf', 'stbl']
+
+if (process.argv.length == 3) {
+    var fs = require('fs');
+    var Buffer = require('buffer').Buffer;
+    var fileName = process.argv[2]
+    if (fs.existsSync(fileName)) {
+        var buffer = fs.readFileSync(fileName)
+        parseBuffer(buffer, 0)
+    } else console.error('file not found : ' + fileName)
+} else console.error('missing filename')
+
+function parseBuffer(buffer, level) {
+    var cursor = 0
+    var double = false
+    while (cursor < buffer.length) {
+        var size = buffer.readUInt32BE(cursor)
+        cursor += 4
+        var type = buffer.toString('utf8', cursor, cursor += 4)
+        if (double = (size == 1)) {
+            size = buffer.readUInt32BE(cursor) << 4
+            cursor += 4
+            size += buffer.readUInt32BE(cursor)
+            cursor += 4
+        }
+
+        console.log(ident(level), type, '( ' + size + ' bytes )')
+
+        var tempCursor = cursor + size - (double ? 16 : 8)
+
+        if (parentBoxes.indexOf(type) != -1) parseBuffer(buffer.slice(cursor, tempCursor), level + 1)
+
+        cursor = tempCursor
+
+    }
+}
+
+function ident(count) {
+    var t = ''
+    for (var c = 0; c < count; c++) t += '\t'
+    return t
+}
