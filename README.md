@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/ysle/mp4map.png?label=ready&title=Ready)](https://waffle.io/ysle/mp4map)
 MP4map
 ======
 
