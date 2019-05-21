@@ -1,14 +1,14 @@
-[![Stories in Ready](https://badge.waffle.io/ysle/mp4map.png?label=ready&title=Ready)](https://waffle.io/ysle/mp4map)
 MP4map
 ======
 
-###install
-npm i mp4map -g
+### install
+`npm i mp4map -g`
 
-###use
-mp4map video.mp4
+### use
+`mp4map video.mp4`
 
-###results like
+### results like
+```
 	ftyp ( 24 bytes )
 	moov ( 59144 bytes )
 			mvhd ( 108 bytes )
@@ -47,3 +47,4 @@ mp4map video.mp4
 											stco ( 9012 bytes )
 	mdat ( 26903534 bytes )
 	free ( 47 bytes )
+```
